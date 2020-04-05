@@ -13,6 +13,10 @@
 		15D038652434C64B00E06322 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D038632434C64B00E06322 /* Main.storyboard */; };
 		15D038672434C64D00E06322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D038662434C64D00E06322 /* Assets.xcassets */; };
 		15D0386A2434C64D00E06322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15D038682434C64D00E06322 /* LaunchScreen.storyboard */; };
+		15D038742434CDF900E06322 /* test3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15D038712434CDF800E06322 /* test3.jpg */; };
+		15D038752434CDF900E06322 /* test1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15D038722434CDF800E06322 /* test1.jpg */; };
+		15D038762434CDF900E06322 /* test2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 15D038732434CDF900E06322 /* test2.jpg */; };
+		15D038A02438DAAC00E06322 /* ZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D0389F2438DAAC00E06322 /* ZoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		15D038662434C64D00E06322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		15D038692434C64D00E06322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		15D0386B2434C64D00E06322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15D038712434CDF800E06322 /* test3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test3.jpg; sourceTree = "<group>"; };
+		15D038722434CDF800E06322 /* test1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test1.jpg; sourceTree = "<group>"; };
+		15D038732434CDF900E06322 /* test2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test2.jpg; sourceTree = "<group>"; };
+		15D0389F2438DAAC00E06322 /* ZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +67,14 @@
 				15D0385D2434C64B00E06322 /* AppDelegate.swift */,
 				15D0385F2434C64B00E06322 /* SceneDelegate.swift */,
 				15D038612434C64B00E06322 /* ViewController.swift */,
+				15D0389F2438DAAC00E06322 /* ZoomViewController.swift */,
 				15D038632434C64B00E06322 /* Main.storyboard */,
 				15D038662434C64D00E06322 /* Assets.xcassets */,
 				15D038682434C64D00E06322 /* LaunchScreen.storyboard */,
 				15D0386B2434C64D00E06322 /* Info.plist */,
+				15D038722434CDF800E06322 /* test1.jpg */,
+				15D038732434CDF900E06322 /* test2.jpg */,
+				15D038712434CDF800E06322 /* test3.jpg */,
 			);
 			path = SlideshowApp;
 			sourceTree = "<group>";
@@ -127,7 +139,10 @@
 			files = (
 				15D0386A2434C64D00E06322 /* LaunchScreen.storyboard in Resources */,
 				15D038672434C64D00E06322 /* Assets.xcassets in Resources */,
+				15D038762434CDF900E06322 /* test2.jpg in Resources */,
 				15D038652434C64B00E06322 /* Main.storyboard in Resources */,
+				15D038752434CDF900E06322 /* test1.jpg in Resources */,
+				15D038742434CDF900E06322 /* test3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +156,7 @@
 				15D038622434C64B00E06322 /* ViewController.swift in Sources */,
 				15D0385E2434C64B00E06322 /* AppDelegate.swift in Sources */,
 				15D038602434C64B00E06322 /* SceneDelegate.swift in Sources */,
+				15D038A02438DAAC00E06322 /* ZoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
