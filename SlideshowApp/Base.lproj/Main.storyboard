@@ -40,6 +40,10 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="2n9-mt-mGb"/>
+                                    <constraint firstAttribute="height" constant="30" id="YLT-bx-knK"/>
+                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test1" translatesAutoresizingMaskIntoConstraints="NO" id="WGA-1a-RqD">
                                 <rect key="frame" x="67" y="343" width="280" height="210"/>
