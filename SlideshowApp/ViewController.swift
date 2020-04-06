@@ -81,7 +81,12 @@ class ViewController: UIViewController {
                         #selector(updateTimer(_:)), userInfo: nil, repeats: true)
                     nextButton.isEnabled = false
                     backButton.isEnabled = false
-
+                    
+                    // ボタンの名前を停止とする
+                    switchButton.setTitle("停止", for: .normal)
+                    switchButton.titleLabel?.font =
+                    UIFont.systemFont(ofSize: 16)
+                    
                 } else if self.timer != nil {
                     // タイマーを停止
                     self.timer.invalidate()
@@ -89,6 +94,11 @@ class ViewController: UIViewController {
                     self.timer = nil
                     nextButton.isEnabled = true
                     backButton.isEnabled = true
+                    
+                    // ボタンの名前を再生とする
+                    switchButton.setTitle("再生", for: .normal)
+                    switchButton.titleLabel?.font =
+                    UIFont.systemFont(ofSize: 16)
                 }
     }
     
