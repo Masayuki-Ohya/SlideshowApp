@@ -131,7 +131,7 @@ class ViewController: UIViewController {
             let image = UIImage(named: name)
             
         zoomViewController.selectedImg = image
-        self.timer.invalidate()
+        
         
         }
     
