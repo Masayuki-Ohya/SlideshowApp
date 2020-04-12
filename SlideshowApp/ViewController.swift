@@ -20,29 +20,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
         let image = UIImage(named: "test1")
         imageView.image = image
     }
+    
+    var displayImageNo = 0
+    
+    
+    let imageNameArray = ["test1", "test2", "test3"]
+    
+    
+    func displayImage() {
         
-        var displayImageNo = 0
+        
+        let name = imageNameArray[displayImageNo]
         
         
-        let imageNameArray = ["test1", "test2", "test3"]
-
+        let image = UIImage(named: name)
         
-        func displayImage() {
-            
-            
-            let name = imageNameArray[displayImageNo]
-            
-            
-            let image = UIImage(named: name)
-            
-            
-            imageView.image = image
-            
-        }
+        
+        imageView.image = image
+        
+    }
     
     
     @IBAction func nextButtonTap(_ sender: Any) {
@@ -59,11 +58,9 @@ class ViewController: UIViewController {
     
     @IBAction func backButtonTap(_ sender: Any) {
         if displayImageNo  >= 1 && displayImageNo  <= imageNameArray.count - 1  {
-          
             displayImageNo -= 1
-            
             displayImage()
-        }  else {
+        } else {
             displayImageNo = imageNameArray.count - 1
             displayImage()
         }
@@ -73,40 +70,37 @@ class ViewController: UIViewController {
     
     
     @IBAction func switchButtonTap(_ sender: Any) {
-       
-                if self.timer == nil {
-                   
-                    self.timer = Timer.scheduledTimer(timeInterval: 2.0,
-                   target: self, selector:
-                        #selector(updateTimer(_:)), userInfo: nil, repeats: true)
-                    nextButton.isEnabled = false
-                    backButton.isEnabled = false
-                    
-                   
-                    switchButton.setTitle("停止", for: .normal)
-                    switchButton.titleLabel?.font =
-                    UIFont.systemFont(ofSize: 16)
-                    
-                } else if self.timer != nil {
-                  
-                    self.timer.invalidate()
-                   
-                    self.timer = nil
-                    nextButton.isEnabled = true
-                    backButton.isEnabled = true
-                    
-                    
-                    switchButton.setTitle("再生", for: .normal)
-                    switchButton.titleLabel?.font =
-                    UIFont.systemFont(ofSize: 16)
-                }
+        
+        if self.timer == nil {
+            
+            self.timer = Timer.scheduledTimer(timeInterval: 2.0,
+            target: self, selector:
+            #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            nextButton.isEnabled = false
+            backButton.isEnabled = false
+            
+            
+            switchButton.setTitle("停止", for: .normal)
+            switchButton.titleLabel?.font =
+            UIFont.systemFont(ofSize: 16)
+            
+        } else if self.timer != nil {
+            
+            self.timer.invalidate()
+            
+            self.timer = nil
+            nextButton.isEnabled = true
+            backButton.isEnabled = true
+            switchButton.setTitle("再生", for: .normal)
+            switchButton.titleLabel?.font =
+                UIFont.systemFont(ofSize: 16)
+        }
     }
-    
     
     @objc func updateTimer(_ timer: Timer) {
         
         if displayImageNo < imageNameArray.count - 1 {
-           
+            
             displayImageNo += 1
             
             displayImage()
@@ -123,16 +117,34 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            
-            let zoomViewController:ZoomViewController = segue.destination as! ZoomViewController
-            
-            let name = imageNameArray[displayImageNo]
-            
-            let image = UIImage(named: name)
-            
-        zoomViewController.selectedImg = image
+        let zoomViewController:ZoomViewController = segue.destination as! ZoomViewController
         
+        if self.timer == nil {
+            let name = imageNameArray[displayImageNo]
+            let image = UIImage(named: name)
+            zoomViewController.selectedImg = image
+        } else if self.timer != nil {
+            let name = imageNameArray[displayImageNo]
+            let image = UIImage(named: name)
+            zoomViewController.selectedImg = image
+            stopProcess()
         }
+        
+    }
+    
+    func startProcess() {
+        
+    }
+    
+    func stopProcess() {
+        self.timer.invalidate()
+        self.timer = nil
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        switchButton.setTitle("再生", for: .normal)
+        switchButton.titleLabel?.font =
+        UIFont.systemFont(ofSize: 16)
+    }
     
 }
 
