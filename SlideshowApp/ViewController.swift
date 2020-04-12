@@ -132,10 +132,6 @@ class ViewController: UIViewController {
         
     }
     
-    func startProcess() {
-        
-    }
-    
     func stopProcess() {
         self.timer.invalidate()
         self.timer = nil
